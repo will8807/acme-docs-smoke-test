@@ -1,0 +1,44 @@
+site:
+  name: Acme Docs
+  description: Official documentation for Acme Corp products and APIs
+  baseUrl: https://docs.acme.example
+  version: "2.0"
+  language: en
+  logo: /assets/logo-v2.svg
+
+nav:
+  - title: Getting Started
+    path: /docs/getting-started
+  - title: Configuration
+    path: /docs/configuration
+  - title: API Reference
+    path: /docs/api-reference
+  - title: Guides
+    children:
+      - title: Authentication
+        path: /guides/authentication
+      - title: Dashboard Tour
+        path: /guides/dashboard-tour
+  - title: Changelog
+    path: /changelog
+
+build:
+  outputDir: .next
+  trailingSlash: false
+  minify: true
+  standaloneOutput: true
+
+search:
+  enabled: true
+  provider: algolia
+  indexName: acme-docs-v2-prod
+  hitsPerPage: 8
+
+analytics:
+  enabled: true
+  provider: posthog
+  host: https://app.posthog.com
+
+feedback:
+  enabled: true
+  endpoint: https://api.acme.example/docs-feedback
